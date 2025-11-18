@@ -158,13 +158,6 @@ vim.o.inccommand = 'split'
 -- Show which line your cursor is on
 vim.o.cursorline = true
 
--- Minimal number of screen lines to keep above and below the cursor.
-vim.o.scrolloff = 10
-vim.o.expandtab = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
-vim.opt.colorcolumn = '80'
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
 -- See `:help 'confirm'`
@@ -808,7 +801,7 @@ require('lazy').setup({
             config = function()
               require('luasnip.loaders.from_vscode').lazy_load()
               require('luasnip.loaders.from_vscode').lazy_load {
-                paths = vim.fn.stdpath 'config' .. '/lua/custom/snippets',
+                paths = { vim.fn.stdpath 'config' .. '/snippets' },
               }
             end,
           },
@@ -1018,6 +1011,17 @@ require('lazy').setup({
     },
   },
 })
+-- Custom configuration
+-- Minimal number of screen lines to keep above and below the cursor.
+vim.o.scrolloff = 10
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.tabstop = 4
+vim.o.softtabstop = 4
+vim.opt.colorcolumn = '80'
+vim.keymap.set('n', '<leader>2o', '2o<Esc>i', { desc = 'add two new lines, down' })
+vim.keymap.set('n', '<leader>2O', '2O<Esc>ki', { desc = 'add two new lines, up' })
+vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#FF0000' })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
