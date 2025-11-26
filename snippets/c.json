@@ -52,6 +52,7 @@
       " * Includes",
       " ******************************************************************************/",
       "",
+      "#include \"${TM_FILENAME_BASE}.h\" /*!< Always include file header */",
       "",
       "/******************************************************************************",
       " * Private Macros",
@@ -111,7 +112,7 @@
   "Lowercase filename base": {
     "prefix": "fname",
     "body": [
-      "${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_{2}"
+      "${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_${2:type your definition}"
     ],
     "description": "insert lowercase filename base"
   },
@@ -119,7 +120,7 @@
    "Uppercase filename base": {
     "prefix": "FNAME",
     "body": [
-      "${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_{2}"
+      "${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${2:TYPE YOUR DEFINITION}"
     ],
     "description": "insert uppercase filename base"
   },

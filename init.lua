@@ -1022,6 +1022,7 @@ vim.opt.colorcolumn = '80'
 vim.keymap.set('n', '<leader>2o', '2o<Esc>i', { desc = 'add two new lines, down' })
 vim.keymap.set('n', '<leader>2O', '2O<Esc>ki', { desc = 'add two new lines, up' })
 vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#FF0000' })
+vim.opt.wrap = false
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
