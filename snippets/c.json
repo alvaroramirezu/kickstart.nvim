@@ -91,6 +91,70 @@
       " ******************************************************************************/"
     ],
     "description": "80-character section header"
+  },
+
+  "Enum value with inline doxygen": {
+    "prefix": "edoc",
+    "body": [
+      "${1:NAME}_{2},\t\t\t/*!< ${3:description} */"
+    ],
+    "description": "Enum value with /*!< ... */ inline Doxygen"
+  },
+  "struct value with inline doxygen": {
+    "prefix": "tdoc",
+    "body": [
+      "${1:type name}_{2};\t\t\t/*!< ${3:description} */"
+    ],
+    "description": "Struct value with /*!< ... */ inline Doxygen"
+  },
+
+  "Lowercase filename base": {
+    "prefix": "fname",
+    "body": [
+      "${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_{2}"
+    ],
+    "description": "insert lowercase filename base"
+  },
+
+   "Uppercase filename base": {
+    "prefix": "FNAME",
+    "body": [
+      "${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_{2}"
+    ],
+    "description": "insert uppercase filename base"
+  },
+
+  "Enum template from filename": {
+    "prefix": "tenum",
+    "description": "Create typedef enum using filename",
+    "body": [
+      "typedef enum",
+      "{",
+      "\t${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${2:MYITEM1},\t\t\t/*!< ${3:description} */",
+      "\t${TM_FILENAME_BASE/(.*)/${1:/upcase}/}_${4:MYITEM2},\t\t\t/*!< ${5:description} */",
+      "} ${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_${6:ENUM_NAME}_t;"
+    ]
+  },
+
+  "Struct template from filename": {
+    "prefix": "tstruct",
+    "description": "Create typedef struct using filename",
+    "body": [
+      "typedef struct",
+      "{",
+      "\t${1:type name}; /*!< ${2:description} */",
+      "} ${TM_FILENAME_BASE/(.*)/${1:/downcase}/}_${3:name}_t;"
+    ]
+  },
+
+  "Add inline doxygen comment": {
+    "prefix": "citem",
+    "body": [
+      "/*!< ${1:description} */"
+    ],
+    "description": "inline doxygen comment"
   }
+
+
 }
 
