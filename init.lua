@@ -1024,5 +1024,15 @@ vim.keymap.set('n', '<leader>2O', '2O<Esc>ki', { desc = 'add two new lines, up' 
 vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#FF0000' })
 vim.opt.wrap = false
 
+vim.keymap.set('n', '<leader>rO', function()
+  vim.bo.readonly = true
+  vim.bo.modifiable = false
+end, { desc = 'Make buffer read-only (local)' })
+
+vim.keymap.set('n', '<leader>rw', function()
+  vim.bo.readonly = false
+  vim.bo.modifiable = true
+end, { desc = 'Make buffer writable (local)' })
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
