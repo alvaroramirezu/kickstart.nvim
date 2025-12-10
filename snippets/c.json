@@ -94,6 +94,16 @@
     "description": "80-character section header"
   },
 
+  "Title section comment": {
+    "prefix": "add_subsection",
+    "body": [
+      "/*=============================================================================",
+      " * ${1:Section Title}",
+      " *=============================================================================*/"
+    ],
+    "description": "80-character sub-section header"
+  },
+
   "Enum value with inline doxygen": {
     "prefix": "edoc",
     "body": [
@@ -155,7 +165,6 @@
     ],
     "description": "inline doxygen comment"
   }
-
 
 }
 

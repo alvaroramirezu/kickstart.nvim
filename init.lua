@@ -1015,12 +1015,14 @@ require('lazy').setup({
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.o.scrolloff = 10
 vim.o.expandtab = true
-vim.o.shiftwidth = 4
-vim.o.tabstop = 4
-vim.o.softtabstop = 4
+vim.o.shiftwidth = 2
+vim.o.tabstop = 2
+vim.o.softtabstop = 2
 vim.opt.colorcolumn = '80'
-vim.keymap.set('n', '<leader>2o', '2o<Esc>i', { desc = 'add two new lines, down' })
-vim.keymap.set('n', '<leader>2O', '2O<Esc>ki', { desc = 'add two new lines, up' })
+vim.keymap.set('n', '<leader>2o', '2o<Esc>0k', { desc = 'add two new lines, down' })
+vim.keymap.set('n', '<leader>2O', '2O<Esc>0k', { desc = 'add two new lines, up' })
+vim.keymap.set('n', '<leader>4o', '4o<Esc>03k', { desc = 'add four new lines, down' })
+vim.keymap.set('n', '<leader>4O', '40<Esc>3k', { desc = 'add four new lines, up' })
 vim.api.nvim_set_hl(0, 'ColorColumn', { bg = '#FF0000' })
 vim.opt.wrap = false
 
