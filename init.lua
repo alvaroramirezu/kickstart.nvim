@@ -1036,5 +1036,14 @@ vim.keymap.set('n', '<leader>rw', function()
   vim.bo.modifiable = true
 end, { desc = 'Make buffer writable (local)' })
 
+-- Kickstart.nvim: Python provider setup
+-- Put this near the top of init.lua or in a "basic settings" section
+vim.g.python3_host_prog = '/usr/bin/python3' -- adjust path if using virtualenv
+
+-- Optional: verify with a command
+vim.api.nvim_create_user_command('CheckPython', function()
+  print('Python3 host:', vim.g.python3_host_prog)
+end, {})
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
