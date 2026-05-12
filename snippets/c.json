@@ -88,8 +88,8 @@
     "description": "Source file template with section headers"
   },
 
-  "Title section comment": {
-    "prefix": "add_section",
+  "Start a section of code": {
+    "prefix": "section_new",
     "body": [
       "/******************************************************************************",
       " * ${1:Section Title}",
@@ -97,6 +97,16 @@
     ],
     "description": "80-character section header"
   },
+
+  "End section comment": {
+    "prefix": "section_end",
+    "body": [
+      "/* === END SECTION: ${1:Section Title} === */",
+      "/******************************************************************************/"
+    ],
+    "description": "80-character section closure with END marker"
+  }
+
 
   "Title section comment": {
     "prefix": "add_subsection",
